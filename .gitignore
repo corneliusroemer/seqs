@@ -1,0 +1,4 @@
+.snakemake/
+.snakemake_timestamp
+dataset/
+output/
