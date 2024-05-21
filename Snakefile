@@ -57,7 +57,7 @@ rule postprocess:
         """
         mkdir -p {output}
         for f in {input.translations}/*.fasta; do
-            # Remove the header, use single line sequence
-            seqkit seq -sw0 $f > {output}/$(basename $f)
+            # Remove the header, use single line sequence, and ensure no trailing newlines
+            seqkit seq -sw0 $f | tr -d '\n' > {output}/$(basename $f)
         done
         """
