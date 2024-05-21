@@ -1,3 +1,4 @@
 cores: all
 keep-going: true
 configfile: profiles/default/configfile.yaml
+printshellcmds: true

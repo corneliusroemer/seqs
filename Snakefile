@@ -16,14 +16,18 @@ rule download_dataset:
         "dataset/genome_annotation.gff3",
         "dataset/pathogen.json",
     params:
-        dataset_server=config["dataset_server"],
+        dataset_server=(
+            "--server " + config["dataset_server"]
+            if "dataset_server" in config
+            else ""
+        ),
         dataset_name=config["dataset_name"],
     shell:
         """
         nextclade dataset get \
             --name {params.dataset_name} \
             --output-dir dataset \
-            --server {params.dataset_server}
+            {params.dataset_server}
         """
 
 
