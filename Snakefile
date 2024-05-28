@@ -3,6 +3,7 @@
 2. Run Nextclade on the dataset reference
 3. Move reference and translations to output folder
 """
+import json
 
 
 rule all:
@@ -12,8 +13,6 @@ rule all:
 
 rule download_dataset:
     output:
-        "dataset/reference.fasta",
-        "dataset/genome_annotation.gff3",
         "dataset/pathogen.json",
     params:
         dataset_server=(
@@ -31,10 +30,19 @@ rule download_dataset:
         """
 
 
+def get_files(pathogen_json, name):
+    with open(pathogen_json) as json_file:
+        data = json.load(json_file)
+    config = data["files"]
+
+    return config[name]
+
+
 rule run_nextclade:
     input:
-        reference="dataset/reference.fasta",
-        genome_annotation="dataset/genome_annotation.gff3",
+        reference="dataset/" + get_files("dataset/pathogen.json", "reference"),
+        genome_annotation="dataset/"
+        + get_files("dataset/pathogen.json", "genomeAnnotation"),
         pathogen="dataset/pathogen.json",
     output:
         translations=directory("output"),
