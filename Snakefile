@@ -5,6 +5,8 @@
 """
 import json
 
+print(config)
+
 
 rule all:
     input:
@@ -14,6 +16,8 @@ rule all:
 rule download_dataset:
     output:
         "dataset/pathogen.json",
+        reference="dataset/reference.fasta",
+        genome_annotation="dataset/genome_annotation.gff3",
     params:
         dataset_server=(
             "--server " + config["dataset_server"]
@@ -30,20 +34,10 @@ rule download_dataset:
         """
 
 
-def get_files(pathogen_json, name):
-    with open(pathogen_json) as json_file:
-        data = json.load(json_file)
-    config = data["files"]
-
-    return config[name]
-
-
 rule run_nextclade:
     input:
-        reference="dataset/" + get_files("dataset/pathogen.json", "reference"),
-        genome_annotation="dataset/"
-        + get_files("dataset/pathogen.json", "genomeAnnotation"),
-        pathogen="dataset/pathogen.json",
+        reference="dataset/reference.fasta",
+        genome_annotation="dataset/genome_annotation.gff3",
     output:
         translations=directory("output"),
         reference="output/reference.fasta",
