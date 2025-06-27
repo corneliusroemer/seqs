@@ -25,3 +25,11 @@ for i in {1..8}; do
     mv artefacts/influenza/h1n1pdm/genes/reference.fasta artefacts/influenza/h1n1pdm/segments/seg$i.fasta
 done
 ```
+
+## Dependencies
+
+The following tools are required:
+
+- snakemake
+- nextclade
+- seqkit
