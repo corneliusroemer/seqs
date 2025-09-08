@@ -14,7 +14,7 @@ Install micromamba and activate environment using:
 Example:
 
 ```bash
-s --config dataset_name=nextstrain/ebola/zaire dataset_server="https://raw.githubusercontent.com/nextstrain/nextclade_data/ebola/data_output" output_dir="ebola-zaire"
+snakemake --config dataset_name=nextstrain/ebola/zaire dataset_server="https://raw.githubusercontent.com/nextstrain/nextclade_data/ebola/data_output" output_dir="ebola-zaire"
 ```
 
 If you want to download multiple segments you will have to move the contents of each download as they will otherwise be overwritten by default. An example of how this could be accomplished for influenza is shown below: 
@@ -32,3 +32,4 @@ for i in {1..8}; do
     mv artefacts/influenza/h1n1pdm/genes/reference.fasta artefacts/influenza/h1n1pdm/segments/seg$i.fasta
 done
 ```
+
