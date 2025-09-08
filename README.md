@@ -4,6 +4,13 @@
 
 To use translate different Nextclade datasets, pass config options using the snakemake command.
 
+Install micromamba and activate environment using:
+
+```bash
+ micromamba create -f environment.yaml
+ micromamba activate 
+```
+
 Example:
 
 ```bash
@@ -25,11 +32,3 @@ for i in {1..8}; do
     mv artefacts/influenza/h1n1pdm/genes/reference.fasta artefacts/influenza/h1n1pdm/segments/seg$i.fasta
 done
 ```
-
-## Dependencies
-
-The following tools are required:
-
-- snakemake
-- nextclade
-- seqkit
