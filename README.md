@@ -17,6 +17,7 @@ Example:
 snakemake --config dataset_name=nextstrain/ebola/zaire dataset_server="https://raw.githubusercontent.com/nextstrain/nextclade_data/ebola/data_output" output_dir="ebola-zaire"
 ```
 
+
 If you want to download multiple segments you will have to move the contents of each download as they will otherwise be overwritten by default. An example of how this could be accomplished for influenza is shown below: 
 
 ```
