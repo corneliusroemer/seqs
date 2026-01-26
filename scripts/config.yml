@@ -1,0 +1,36 @@
+HA:
+  ha_h3_h3n8: CY028836
+  ha_h4_h4n6: CY181241
+  ha_h5_h5n1: NC_007362.1
+  ha_h5_h5n2: KU143256
+  ha_h6_h6n2: CY130030
+  ha_h7_h7n9: NC_026425.1
+  ha_h8_h8n4: CY136131
+  ha_h9_h9n2: NC_004908.1
+  ha_h10_h10n7: CY136094
+  ha_h11_h11n9: CY130070
+  ha_h12_h12n5: CY130078
+  ha_h13_h13n6: CY130086
+  ha_h14_h14n5: JN696314
+  ha_h15_h15n9: CY006010
+  ha_h16_h16n3: CY136630
+  ha_h17_h17n10: CY103876
+  ha_h18_h18n11: CY125945
+
+NA:
+  na_n1_h5n1: NC_007361.1
+  na_n2_h6n2: CY130032
+  na_n2_h9n2: NC_004909.1
+  na_n2_h5n2: KU143347
+  na_n3_h16n3: CY136632
+  na_n4_h8n4: CY136133
+  na_n5_h12n5: CY130080
+  na_n6_h4n6: CY181243
+  na_n6_h13n6: CY130088
+  na_n6_h14n6: KC110598
+  na_n8_h3n8: CY028838
+  na_n9_h7n9: NC_026429.1
+  na_n9_h11n9: CY130072
+  na_n9_h15n9: CY005407
+  na_n10_h17n10: CY103878
+  na_n11_h18n11: CY125947
